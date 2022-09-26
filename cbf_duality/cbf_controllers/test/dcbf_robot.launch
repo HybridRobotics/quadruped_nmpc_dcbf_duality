@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<launch>
+    <node pkg="rostopic" type="rostopic" name="robot0_visualiser"
+          args="pub /robot0_marker visualization_msgs/Marker
+  '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'base'},
+    ns: '', id: 0, type: 3, action: 0,
+    pose: {position: {x: 0.12, y: 0, z: 0.1}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}},
+    scale: {x: 0.35, y: 0.35, z: 0.1},
+    color: {r: 0.6350, g: 0.0780, b: 0.1840, a: 0.3},
+    lifetime: {secs: 0, nsecs: 0},
+    frame_locked: true }' -r 2 " output="screen"/>
+
+    <node pkg="rostopic" type="rostopic" name="robot1_visualiser"
+          args="pub /robot1_marker visualization_msgs/Marker
+  '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'base'},
+    ns: '', id: 0, type: 3, action: 0,
+    pose: {position: {x: -0.2, y: 0, z: 0.1}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}},
+    scale: {x: 0.35, y: 0.35, z: 0.1},
+    color: {r: 0.6350, g: 0.0780, b: 0.1840, a: 0.3},
+    lifetime: {secs: 0, nsecs: 0},
+    frame_locked: true }' -r 2 " output="screen"/>
+</launch>

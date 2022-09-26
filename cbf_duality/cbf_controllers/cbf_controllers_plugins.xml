@@ -1,0 +1,23 @@
+<library path="lib/libcbf_controllers">
+
+    <class name="cbf/DCbfSimpleController"
+           type="cbf::DCbfSimpleController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+        </description>
+    </class>
+
+    <class name="cbf/DualityController"
+           type="cbf::DualityController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+        </description>
+    </class>
+
+    <class name="cbf/DCbfDualityController"
+           type="cbf::DCbfDualityController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+        </description>
+    </class>
+</library>

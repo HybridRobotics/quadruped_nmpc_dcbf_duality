@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<launch>
+    <arg name="gap" default="false"/>
+
+    <node unless="$(arg gap)" pkg="rostopic" type="rostopic" name="command_sender"
+          args="pub /move_base_simple/goal geometry_msgs/PoseStamped
+      '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'odom'},
+        pose: {position: {x: 1.2, y: 1.2, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.3826, w: 0.9238}}
+        }' -r 5 " output="screen"/>
+
+    <node if="$(arg gap)" pkg="rostopic" type="rostopic" name="command_sender"
+          args="pub /move_base_simple/goal geometry_msgs/PoseStamped
+      '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'odom'},
+        pose: {position: {x: 1.6, y: 0.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}
+        }' -r 5 " output="screen"/>
+</launch>

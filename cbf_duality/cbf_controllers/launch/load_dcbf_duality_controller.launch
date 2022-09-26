@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<launch>
+    <include file="$(find cbf_controllers)/launch/common.launch"/>
+
+    <node name="controller_loader" pkg="controller_manager" type="controller_manager" output="screen"
+          args="load
+          controllers/joint_state_controller
+          controllers/dcbf_duality_controller
+"/>
+
+</launch>

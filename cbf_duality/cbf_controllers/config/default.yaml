@@ -1,0 +1,10 @@
+controllers:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+  dcbf_simple_controller:
+    type: cbf/DCbfSimpleController
+  duality_controller:
+    type: cbf/DualityController
+  dcbf_duality_controller:
+    type: cbf/DCbfDualityController

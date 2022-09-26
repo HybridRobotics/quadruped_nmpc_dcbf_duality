@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<launch>
+    <node pkg="rostopic" type="rostopic" name="obstacle0_visualiser"
+          args="pub /obstacle0_marker visualization_msgs/Marker
+      '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'odom'},
+        ns: '', id: 0, type: 4, action: 0,
+        pose: {position: {x: 0.0, y: 0.0, z: 0.25}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}},
+        scale: {x: 0.02, y: 0.0, z: 0.5},
+        color: {r: 0.7, g: 0., b: 0., a: 1.0},
+        lifetime: {secs: 0, nsecs: 0},
+        points: [{x: 0.35, y: 0.55, z: 0.0}, {x: 0.85, y: 0.55, z: 0.0}, {x: 0.85, y: 1.05, z: 0.0}, {x: 0.35, y: 1.05, z: 0.0}, {x: 0.35, y: 0.55, z: 0.0}],
+        frame_locked: false }' -r 2 " output="screen"/>
+
+    <node pkg="rostopic" type="rostopic" name="obstacle_pub"
+          args="pub /obstacle cbf_msgs/Obstacle
+      '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'odom'},
+        polytopes: [
+        {points: [{x: 0.35, y: 0.55, z: 0.0}, {x: 0.85, y: 0.55, z: 0.0}, {x: 0.85, y: 1.05, z: 0.0}, {x: 0.35, y: 1.05, z: 0.0}]}
+        ]}' "
+          output="screen"/>
+</launch>
