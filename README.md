@@ -13,11 +13,37 @@
 ## Introduction
 Open source code of [Walking in Narrow Spaces: Safety-critical Locomotion Control for Quadrupedal Robots with Duality-based Optimization](TODO). 
 
+Files structure:
+```
+├── cbf_duality             # Main implementation of this papaer
+│   ├── cbf_controllers     # Controller interface 
+│   ├── cbf_geometry        # Polytopes and QP distance implementation
+│   ├── cbf_interface       # Duality and DCBF constraints OCS2 implementation
+│   └── cbf_msgs            # Polytopes msgs definnation
+├── docs                    # Document assets
+├── legged_control          # Basic controller framwork
+│   ├── docs                # Document assets
+│   ├── legged_common       # Common interface for controller framework
+│   ├── legged_control      # Metapackage
+│   ├── legged_controllers  # Controller interface
+│   ├── legged_estimation   # State estiamtion module
+│   ├── legged_examples     # URDF and hardware interface of A1
+│   ├── legged_gazebo       # Simulation interface
+│   ├── legged_hw           # Hardware interface
+│   ├── legged_interface    # Cost and constraints OCS2 implementation
+│   ├── legged_wbc          # Whole body control module
+│   ├── LICENSE
+│   ├── qpoases_catkin      # QP solver warpper
+│   └── README.md
+└── README.md
+```
+
 ## Getting Started
 
 ### Build
+### Dependecy
+Check this repo [legged_control](https://github.com/qiayuanliao/legged_control) and make sure you can successfully run the simulation. 
 
-Check this awesome repo [legged_control](https://github.com/qiayuanliao/legged_control) and make sure you can successfully run the simulation. 
 
 Then clone and build the cbf_controllers:
 
