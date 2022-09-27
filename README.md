@@ -11,7 +11,7 @@
 </p>
 
 ## Introduction
-Open source code of [Walking in Narrow Spaces: Safety-critical Locomotion Control for Quadrupedal Robots with Duality-based Optimization](TODO) without perceptive implementation part. 
+Open source code of [Walking in Narrow Spaces: Safety-critical Locomotion Control for Quadrupedal Robots with Duality-based Optimization](TODO). 
 
 ## Getting Started
 
@@ -33,7 +33,7 @@ Launch the Gazebo
 roslaunch unitree_description empty_world.launch
 ```
 
-Spwan the controller with exponential DCBF constraints
+Spawn the controller with exponential DCBF constraints
 
 ```
 roslaunch cbf_controllers test_simple_dcbf.launch 
@@ -45,14 +45,14 @@ roslaunch cbf_controllers test_simple_dcbf.launch
 roslaunch cbf_controllers test_simple_duality.launch 
 ```
 
-Then set a 2D Nav Goal in the RViz for the robot standup, and type "trot" to set the gait. You can comand the robot by `move_base_simple/goal` or `cmd_vel` or use the `goal_sender.launch` to send a goal (recommanded).
+Then set a 2D Nav Goal in the RViz for the robot standup, and type "trot" to set the gait. You can command the robot by `move_base_simple/goal` or `cmd_vel` or use the `goal_sender.launch` to send a goal (recommended).
 
 ```
 roslaunch cbf_controllers goal_sender.launch
 ```
 
 ## Implementation Details
-The OCS2 only supports continuous time formulation, and discrete in the solver internally. So the exponential DCBF duality constraints is formulate as:
+The OCS2 only supports continuous time formulation and is discrete in the solver internally. So the exponential DCBF duality constraints is formulated as:
 
 $$
 \begin{align}
