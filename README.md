@@ -15,34 +15,40 @@ Open source code of [Walking in Narrow Spaces: Safety-critical Locomotion Contro
 
 Files structure:
 ```
-├── cbf_duality             # Main implementation of this papaer
+├── cbf_duality             # Main implementation of this paper
 │   ├── cbf_controllers     # Controller interface 
 │   ├── cbf_geometry        # Polytopes and QP distance implementation
 │   ├── cbf_interface       # Duality and DCBF constraints OCS2 implementation
-│   └── cbf_msgs            # Polytopes msgs definnation
+│   └── cbf_msgs            # Polytopes msgs definition
 ├── docs                    # Document assets
-├── legged_control          # Basic controller framwork
+├── legged_control          # Basic controller framework
 │   ├── docs                # Document assets
 │   ├── legged_common       # Common interface for controller framework
 │   ├── legged_control      # Metapackage
 │   ├── legged_controllers  # Controller interface
-│   ├── legged_estimation   # State estiamtion module
+│   ├── legged_estimation   # State estimation module
 │   ├── legged_examples     # URDF and hardware interface of A1
 │   ├── legged_gazebo       # Simulation interface
 │   ├── legged_hw           # Hardware interface
 │   ├── legged_interface    # Cost and constraints OCS2 implementation
 │   ├── legged_wbc          # Whole body control module
 │   ├── LICENSE
-│   ├── qpoases_catkin      # QP solver warpper
+│   ├── qpoases_catkin      # QP solver wrapper
 │   └── README.md
 └── README.md
 ```
 
 ## Getting Started
+### Dependecy
+The main dependey with recommanded building type are shown below
+- OCS2: clone and build from soucre;
+- pinnochio: clone and build from source;
+- qpOASES: cmake FetchContent and build from source;
+- controller_interface: install from packages;
+- Gazebo: install from packages.
 
 ### Build
-### Dependecy
-Check this repo [legged_control](https://github.com/qiayuanliao/legged_control) and make sure you can successfully run the simulation. 
+Check this document [legged_control](https://github.com/qiayuanliao/legged_control) and make sure you can successfully run the simulation. 
 
 
 Then clone and build the cbf_controllers:
