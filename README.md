@@ -1,5 +1,6 @@
 # Walking in Narrow Spaces: Safety-critical Locomotion Control for Quadrupedal Robots with Duality-based Optimization
 <p align="center">
+  <img width="98.0%" src="docs/label.png">
   <img width="24.0%" src="docs/distance.gif">
   <img width="24.0%" src="docs/dcbf.gif">
   <img width="24.0%" src="docs/duality.gif">
@@ -84,7 +85,7 @@ roslaunch cbf_controllers goal_sender.launch
 ```
 
 ## Implementation Details
-The OCS2 only supports continuous time formulation and is discrete in the solver internally. So the exponential DCBF duality constraints is formulated as:
+The OCS2 only supports continuous time formulation and is discrete in the solver internally. So the exponential DCBF duality constraints are formulated as:
 
 $$
 \begin{align}
