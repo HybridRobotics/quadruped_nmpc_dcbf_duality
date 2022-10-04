@@ -89,9 +89,9 @@ The OCS2 only supports continuous time formulation and is discrete in the solver
 
 $$
 \begin{align}
-    -\bm{\lambda}\_{\mathcal{R}}^T \mathbf{b}\_{\mathcal{R}}(\mathbf{x}) -\bm{\lambda}\_{\mathcal{O}_i}^T\mathbf{b}\_{\mathcal{O}_i} &\geq  \alpha + e^{-\gamma (t-t_0)} d_i^*(\mathbf{x}_0), \\
-    A\_{\mathcal{R}}^T(\mathbf{x}) \bm{\lambda}\_{\mathcal{R}} + A\_{\mathcal{O}_i}^T \bm{\lambda}\_{\mathcal{O}_i} &= 0, \\
-    \lVert A\_{\mathcal{O}_i}^T \bm{\lambda}\_{\mathcal{O}_i} \rVert\_2 &\leq 1, \\
-    \bm{\lambda}\_{\mathcal{R}} \geq 0, \bm{\lambda}\_{\mathcal{O}_i} &\geq 0.
+    -\boldsymbol{\lambda}\_{\mathcal{R}}^T \mathbf{b}\_{\mathcal{R}}(\mathbf{x}) -\boldsymbol{\lambda}\_{\mathcal{O}_i}^T\mathbf{b}\_{\mathcal{O}_i} &\geq  \alpha + e^{-\gamma (t-t_0)} d_i^*(\mathbf{x}_0), \\
+    A\_{\mathcal{R}}^T(\mathbf{x}) \boldsymbol{\lambda}\_{\mathcal{R}} + A\_{\mathcal{O}_i}^T \boldsymbol{\lambda}\_{\mathcal{O}_i} &= 0, \\
+    \lVert A\_{\mathcal{O}_i}^T \boldsymbol{\lambda}\_{\mathcal{O}_i} \rVert\_2 &\leq 1, \\
+    \boldsymbol{\lambda}\_{\mathcal{R}} \geq 0, \boldsymbol{\lambda}\_{\mathcal{O}_i} &\geq 0.
 \end{align}
 $$
