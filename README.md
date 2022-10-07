@@ -60,7 +60,7 @@ catkin build cbf_controllers
 ```
 
 ### Test
-Launch the Gazebo
+Launch the Gazebo simulation
 
 ```
 roslaunch unitree_description empty_world.launch
@@ -72,7 +72,7 @@ Spawn the controller with exponential DCBF constraints
 roslaunch cbf_controllers test_simple_dcbf.launch 
 ```
 
-**OR** the controller with exponential DCBF duality constraints
+**OR** the controller with exponential DCBF **duality** constraints
 
 ```
 roslaunch cbf_controllers test_simple_duality.launch 
@@ -85,7 +85,7 @@ roslaunch cbf_controllers goal_sender.launch
 ```
 
 ## Implementation Details
-The OCS2 only supports continuous time formulation and is discrete in the solver internally. So the exponential DCBF duality constraints are formulated as:
+The OCS2 only supports continuous time formulation and is discrete in the solver internally. So the exponential DCBF duality constraints are formulated as follows:
 
 $$
 \begin{align}
@@ -95,3 +95,5 @@ $$
     \boldsymbol{\lambda}\_{\mathcal{R}} \geq 0, \boldsymbol{\lambda}\_{\mathcal{O}_i} &\geq 0.
 \end{align}
 $$
+
+The equality constraints are handled through a projection method, and the inequalities are handled either through a relaxed-barrier method. [More details](https://leggedrobotics.github.io/ocs2/optimal_control_modules.html).
