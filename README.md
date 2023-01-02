@@ -12,7 +12,7 @@
 </p>
 
 ## Introduction
-Open source code of [Walking in Narrow Spaces: Safety-critical Locomotion Control for Quadrupedal Robots with Duality-based Optimization](TODO). 
+Open source code of [Walking in Narrow Spaces: Safety-critical Locomotion Control for Quadrupedal Robots with Duality-based Optimization](http://arxiv.org/abs/2212.14199). 
 
 Files structure:
 ```
@@ -63,7 +63,7 @@ catkin build cbf_controllers
 Launch the Gazebo simulation
 
 ```
-roslaunch unitree_description empty_world.launch
+roslaunch legged_unitree_description empty_world.launch
 ```
 
 Spawn the controller with exponential DCBF constraints
