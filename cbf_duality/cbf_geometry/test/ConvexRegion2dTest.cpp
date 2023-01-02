@@ -3,12 +3,11 @@
 //
 #include <gtest/gtest.h>
 
-#include "cbf_geometry/distance_qp_2d.h"
+#include "cbf_geometry/DistanceQp2d.h"
 
 using namespace cbf;
 
-TEST(DistanceQp2D, twoRectangle)
-{
+TEST(DistanceQp2D, twoRectangle) {
   vector_t pose0(3), pose1(3);
   pose0 << 0, 0, M_PI_4;
   pose1 << 2.0, 0, M_PI_4;
@@ -20,8 +19,7 @@ TEST(DistanceQp2D, twoRectangle)
   EXPECT_NEAR(qp.getDistance(), qp_dual.getDistance(), 1e-10);
 }
 
-TEST(DistanceQp2D, twoTriangle)
-{
+TEST(DistanceQp2D, twoTriangle) {
   size_t num_points = 3;
   vector_t points0(num_points * 2), points1(num_points * 2);
   points0 << 0, 0, 1, -1, 1, 1;
@@ -34,8 +32,7 @@ TEST(DistanceQp2D, twoTriangle)
   EXPECT_NEAR(qp.getDistance(), qp_dual.getDistance(), 1e-10);
 }
 
-TEST(ConvexRegion2D, sameRegion)
-{
+TEST(ConvexRegion2D, sameRegion) {
   vector_t pose(3), size(2);
   pose << 1, 0, 0;
   size << 1.0, 1.0;
@@ -51,12 +48,9 @@ TEST(ConvexRegion2D, sameRegion)
   vector_t rect_h = rectangle.getA() * test_point - rectangle.getB();
   vector_t vertex_h = vertex.getA() * test_point - vertex.getB();
   size_t rect_i = 0, vertex_i = 0;
-  for (size_t i = 0; i < rect_h.size(); ++i)
-  {
-    if (rect_h(i) > 0)
-      rect_i++;
-    if (vertex_h(i) > 0)
-      rect_i++;
+  for (size_t i = 0; i < rect_h.size(); ++i) {
+    if (rect_h(i) > 0) rect_i++;
+    if (vertex_h(i) > 0) rect_i++;
   }
   EXPECT_EQ(rect_i, vertex_i);
 }

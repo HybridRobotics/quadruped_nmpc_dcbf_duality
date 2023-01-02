@@ -49,9 +49,9 @@ link_directories(
 )
 
 add_library(${PROJECT_NAME}
-        src/factory_access_helper.cpp
-        src/legged_interface.cpp
-        src/obstacle_receiver.cpp
+        src/FactoryAccessHelper.cpp
+        src/DCbfLeggedInterface.cpp
+        src/ObstacleReceiver.cpp
         )
 
 target_link_libraries(${PROJECT_NAME}

@@ -6,21 +6,19 @@
 
 #include <mutex>
 
-#include <ros/ros.h>
 #include <cbf_msgs/Obstacle.h>
+#include <ros/ros.h>
 
-#include <ocs2_oc/synchronized_module/SolverSynchronizedModule.h>
 #include <ocs2_mpc/MPC_BASE.h>
+#include <ocs2_oc/synchronized_module/SolverSynchronizedModule.h>
 
-#include "cbf_interface/obstacle.h"
+#include "cbf_interface/Obstacle.h"
 
-namespace cbf
-{
+namespace cbf {
 using namespace ocs2;
 
-class ObstacleReceiver : public SolverSynchronizedModule
-{
-public:
+class ObstacleReceiver : public SolverSynchronizedModule {
+ public:
   ObstacleReceiver(ros::NodeHandle nh, std::shared_ptr<DualityObstacles> obstacle, SolverBase* solver);
 
   void preSolverRun(scalar_t initTime, scalar_t finalTime, const vector_t& currentState,
@@ -28,11 +26,11 @@ public:
 
   void postSolverRun(const PrimalSolution& primalSolution) override{};
 
-protected:
+ protected:
   std::shared_ptr<DualityObstacles> obstacle_ptr_;
   vector_t dists_;
 
-private:
+ private:
   void pointsCallback(const cbf_msgs::ObstacleConstPtr& msg);
 
   SolverBase* solver_;
@@ -41,14 +39,13 @@ private:
   ros::Publisher pub_;
 
   std::mutex mutex;
-  std::atomic_bool points_updated_;
-  vector_array_t points_array_;
-  size_t msgs_size_;
+  std::atomic_bool pointsUpdated_;
+  vector_array_t pointsArray_;
+  size_t msgsSize_;
 };
 
-class CbfObstaclesReceiver : public ObstacleReceiver
-{
-public:
+class CbfObstaclesReceiver : public ObstacleReceiver {
+ public:
   using ObstacleReceiver::ObstacleReceiver;
 
   void preSolverRun(scalar_t initTime, scalar_t finalTime, const vector_t& currentState,

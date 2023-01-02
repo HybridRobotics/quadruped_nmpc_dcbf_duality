@@ -1,29 +1,26 @@
 //
 // Created by qiayuan on 2022/9/12.
 //
-#include <ros/ros.h>
 #include <ocs2_msgs/mpc_observation.h>
+#include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
 
 ocs2_msgs::mpc_observation MSG_LAST;
 size_t ID;
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
   ros::init(argc, argv, "visualiser");
   ros::NodeHandle nh;
 
   auto pub_marker = nh.advertise<visualization_msgs::Marker>("/visualiser", 10);
 
   auto callback = [&](const ocs2_msgs::mpc_observation::ConstPtr& msg) {
-    if (MSG_LAST.state.value.empty())
-    {
+    if (MSG_LAST.state.value.empty()) {
       MSG_LAST = *msg;
       ID = 0;
       return;
     }
-    if ((msg->time - MSG_LAST.time) < 0.1)
-      return;
+    if ((msg->time - MSG_LAST.time) < 0.1) return;
 
     visualization_msgs::Marker marker;
     marker.header.stamp = ros::Time::now();
